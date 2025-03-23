@@ -1,7 +1,7 @@
 ﻿using Etl.API.Controllers;
-using Etl.Application.Universities.CreateUniversity;
+using Etl.Application.UniversityManagment.CreateUniversity;
 
-namespace Etl.API
+namespace Etl.API.Services
 {
     public class UploadService
     {
@@ -46,7 +46,7 @@ namespace Etl.API
             CreateUniversityHandler handler,
             CancellationToken cancellationToken = default)
         {
-            bool success = false;
+            bool success = true;
 
             await handler.ClearDataBase();
             List<string> urls = new List<string>();

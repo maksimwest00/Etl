@@ -1,11 +1,9 @@
-﻿using Etl.Application.Universities.CreateUniversity;
+﻿using Etl.API.Services;
+using Etl.Application.UniversityManagment.CreateUniversity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Etl.API.Controllers
 {
-    // TODO
-    // countThreads вынести в конфиг
-
     [ApiController]
     [Route("[controller]")]
     public class UniversityController : ControllerBase
@@ -18,18 +16,11 @@ namespace Etl.API.Controllers
             IHttpClientFactory httpClientFactory)
         {
             var httpClient = httpClientFactory.CreateClient();
-            _uploadService = new UploadService(logger, httpClient, 10);
-            
+            int countThreads = int.Parse(configuration.GetSection("MyVarriables")["CountThreads"]!);
+            _uploadService = new UploadService(logger, httpClient, countThreads);
+
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            
-            return Ok();
-        }
-        
-        // Загрузка данных по 10ти странам
         [HttpPut(Name = "University")]
         public async Task<IActionResult> UpdateInfo(
             [FromServices] CreateUniversityHandler handler,

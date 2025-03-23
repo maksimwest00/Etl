@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Etl.Application.Universities;
 using Etl.Domain.Entities.University;
+using Etl.Application.UniversityManagment;
 
 namespace Etl.Infrastructure.Repositories
 {
@@ -24,6 +24,15 @@ namespace Etl.Infrastructure.Repositories
         public async Task ClearDataBase()
         {
             await _dbContext.Universities.ExecuteDeleteAsync();
+        }
+
+        public async Task<IReadOnlyList<University>> GetByFilters(
+            string name,
+            string country)
+        {
+            return await _dbContext.Universities
+                .Where(x => x.Name == name && x.Country == country)
+                .ToListAsync();
         }
 
         public async Task SaveChanges(CancellationToken cancellationToken)

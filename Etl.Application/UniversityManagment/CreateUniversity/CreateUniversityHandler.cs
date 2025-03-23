@@ -1,5 +1,6 @@
-﻿using Etl.Domain.Entities.University;
-namespace Etl.Application.Universities.CreateUniversity
+﻿using Etl.Application.UniversityManagment;
+using Etl.Domain.Entities.University;
+namespace Etl.Application.UniversityManagment.CreateUniversity
 {
     public class CreateUniversityHandler
     {

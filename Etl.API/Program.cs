@@ -1,5 +1,6 @@
-using Etl.Application.Universities;
-using Etl.Application.Universities.CreateUniversity;
+using Etl.Application.UniversityManagment;
+using Etl.Application.UniversityManagment.CreateUniversity;
+using Etl.Application.UniversityManagment.Queries.GetUniversitiesByFilters;
 using Etl.Infrastructure;
 using Etl.Infrastructure.Repositories;
 
@@ -15,6 +16,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<ApplicationDbContext>();
 
 builder.Services.AddScoped<CreateUniversityHandler>();
+builder.Services.AddScoped<GetUniversitiesByFiltersHandler>();
 builder.Services.AddScoped<IUniversitiesRepository, UniversitiesRepository>();
 
 

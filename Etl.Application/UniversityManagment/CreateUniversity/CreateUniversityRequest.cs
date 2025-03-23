@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Etl.Application.Universities.CreateUniversity
+namespace Etl.Application.UniversityManagment.CreateUniversity
 {
     public record CreateUniversityRequest
     {
