@@ -1,6 +1,25 @@
 @Etl.API_HostAddress = http://localhost:5261
 
-GET {{Etl.API_HostAddress}}/weatherforecast/
+GET {{Etl.API_HostAddress}}/University/
 Accept: application/json
+
+GET {{Etl.API_HostAddress}}/University/
+Accept: application/json
+
+GET {{Etl.API_HostAddress}}/University/
+Accept: application/json
+
+GET {{Etl.API_HostAddress}}/University/
+Accept: application/json
+
+GET {{Etl.API_HostAddress}}/University/
+Accept: application/json
+
+GET {{Etl.API_HostAddress}}/University/
+Accept: application/json
+
+GET {{Etl.API_HostAddress}}/University/
+Accept: application/json
+
 
 ###
