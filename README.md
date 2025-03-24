@@ -27,3 +27,13 @@ CREATE TABLE IF NOT EXISTS public.universities
     site text COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT pk_universities PRIMARY KEY (id)
 )
+
+secrets.json
+{
+  "ConnectionStrings": {
+    "Database": "Server=localhost;Port=5434;Database=etl;User Id=postgres;Password=postgres;"
+  },
+  "MyVarriables": {
+    "CountThreads": "5"
+  }
+}
