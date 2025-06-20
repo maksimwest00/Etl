@@ -13,7 +13,9 @@ namespace Etl.Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(configuration.GetConnectionString(DATABASE));
+            var host = "amvera-maksimwest00-cnpg-etlserverdb-rw";
+            var dbString = $"Server={host};Port=5432;Database=etldatabase;Username=myuser;Password=postgre;";
+            //optionsBuilder.UseNpgsql(configuration.GetConnectionString(DATABASE));
             optionsBuilder.UseSnakeCaseNamingConvention();
             optionsBuilder.UseLoggerFactory(CreateLoggerFactory());
         }
